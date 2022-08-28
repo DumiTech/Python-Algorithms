@@ -39,7 +39,7 @@ class Solution:
         # return len(nums) != len(set(nums))
 
 
-        # Sol 5 => this solution will not worn on leetcode, it will 
+        # Sol 5 => this solution will not work on leetcode, it will 
         # cause a runtime error (because of the constraints and given tests)
         # list = []
         # for i in nums:
