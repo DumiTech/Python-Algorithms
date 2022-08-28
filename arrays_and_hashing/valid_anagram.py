@@ -13,54 +13,50 @@ class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
 
         # Sol 1 Using Hash maps (dictionaries in Python)
-        if (len(s)) != len(t): 
-            return False
-        hash_s, hash_t = {}, {}
-
-        for i in range(len(s)):
-            hash_s[s[i]] = 1 + hash_s.get(s[i], 0)
-            hash_t[t[i]] = 1 + hash_t.get(t[i], 0)
-        if (hash_s != hash_t): 
-            return False
-            
-        return True
-
-
-        # Sol 2 Using one hash map
         # if (len(s)) != len(t): 
         #     return False
-        # hash_s = {}
+        # hash_s, hash_t = {}, {}
+
         # for i in range(len(s)):
         #     hash_s[s[i]] = 1 + hash_s.get(s[i], 0)
-        #     hash_s[t[i]] = hash_s.get(t[i], 0) - 1
-        # #     print(s[i], "=>",hash_s[s[i]])
-        # #     print()
-        # # print(hash_s)
-        
-        # for i in range(len(hash_s)):
-        #     if hash_s.get(s[i], 0) != 0:
-        #         return False
-
+        #     hash_t[t[i]] = 1 + hash_t.get(t[i], 0)
+            
+        # if (hash_s != hash_t): 
+        #     return False
+            
         # return True
 
 
+        # Sol 2 Using one hash map
+        if (len(s)) != len(t): 
+            return False
+        hash_map = {}
+        for i in range(len(s)):
+            hash_map[s[i]] = hash_map.get(s[i], 0) + 1
+            hash_map[t[i]] = hash_map.get(t[i], 0) - 1
+        
+        for i in hash_map:
+            if hash_map.get(i) != 0:
+                return False
+
+        return True
+
+
         # Sol 3 Using one hash map, but slight different approach
-        # dic = {}
+        # hash_map = {}
         # for i in s:
-        #     if i not in dic:
-        #         dic[i] = 1
+        #     if i not in hash_map:
+        #         hash_map[i] = 1
         #     else:
-        #         dic[i] += 1
+        #         hash_map[i] += 1
 
         # for j in t:
-        #     if j not in dic:
+        #     if j not in hash_map:
         #         return False
         #     else:
-        #         dic[j] -= 1
-
-        # print(dic.values())
+        #         hash_map[j] -= 1
         
-        # for val in dic.values():
+        # for val in hash_map.values():
         #     if val != 0:
         #         return False
 
@@ -78,7 +74,7 @@ class Solution:
         # Sol 6 
         # return all(s.count(i)==t.count(i) for i in set(s+t))
 
-# s, t= "anagram", "nagaram"
-s, t= "rat", "car"
+s, t= "anagram", "nagaram"
+# s, t= "rat", "car"
 obj = Solution()
 print(obj.isAnagram(s,t))
