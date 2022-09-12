@@ -5,7 +5,7 @@ return the only number in the range that is missing from the array.
 
 
 class Solution:
-    def missingNumber(self, nums):
+    def missing_number(self, nums):
         # Solution 1
         # Time complexity: O(2n)
         # Space complexity: O(n)
@@ -39,4 +39,4 @@ class Solution:
 nums = [3,0,1]
 # nums = [9,6,4,2,3,5,7,0,1]
 obj = Solution()
-print(obj.missingNumber(nums))
+print(obj.missing_number(nums))

@@ -4,7 +4,7 @@ twice in the array, and return false if every element is distinct.
 """
 
 class Solution:
-    def containsDuplicate(self, nums):
+    def contains_duplicate(self, nums):
         # Solution 1
         # Time Complexity: O(n), Space Complexity: O(n)
         myset = set()
@@ -64,4 +64,4 @@ class Solution:
 nums = [0,4,5,0,3,6]
 # nums = [3,3]
 obj = Solution()
-print(obj.containsDuplicate(nums))
+print(obj.contains_duplicate(nums))

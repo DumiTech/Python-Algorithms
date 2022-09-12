@@ -10,7 +10,7 @@ from typing import Counter
 
 
 class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
+    def is_anagram(self, s: str, t: str) -> bool:
 
         # Sol 1 Using Hash maps (dictionaries in Python)
         # if (len(s)) != len(t): 
@@ -77,4 +77,4 @@ class Solution:
 s, t= "anagram", "nagaram"
 # s, t= "rat", "car"
 obj = Solution()
-print(obj.isAnagram(s,t))
+print(obj.is_anagram(s,t))
